@@ -1,0 +1,20 @@
+{
+  "name": "projet-1a",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scrp.mjs",
+  "type": "module",
+  "dependencies": {
+    "node.js": "^0.0.1-security",
+    "puppeteer": "^10.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
