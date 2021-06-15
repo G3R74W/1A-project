@@ -13,7 +13,7 @@ function sleep(ms) {
 }
 
 var data = {
-    altidude: "",
+    altitude: "",
     speed: "",
     coordinates: ""
 
@@ -63,7 +63,7 @@ function get_data()
         data = {
             dateSource:
             [{
-              altidude: alt,
+              altitude: alt,
               speed: speed,
               coordinates: coordinates
             }]
