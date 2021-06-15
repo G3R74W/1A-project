@@ -1,14 +1,11 @@
 //utilisation de la librairie puppeteer (peut néecessiter une installation via 'npm install puppeteer')
 
-//const puppeteer = require('puppeteer');
-
-import puppeteer from 'puppeteer';
-import fs from 'fs';
-import express from 'express';
-import { finished } from 'stream';
-import { strict } from 'assert';
+const puppeteer = require('puppeteer');
+const fs = require('fs');
+const express = require('express');
 
 const app = express();
+const data_refresh_interval = 60;
 
 //fonction sleep
 function sleep(ms) {
