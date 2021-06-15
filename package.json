@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "scrp.mjs",
-  "type": "module",
   "dependencies": {
+    "express": "^4.17.1",
     "node.js": "^0.0.1-security",
-    "puppeteer": "^10.0.0"
+    "puppeteer": "^10.0.0",
+    "require": "^2.4.20"
   },
   "devDependencies": {
     "webpack": "^5.38.1",
