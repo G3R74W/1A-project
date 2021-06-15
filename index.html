@@ -20,5 +20,39 @@
     <script src="library/threex.domevents.js"></script>
 
 	<script type="module" src='scripts/render_view.mjs'></script>  
+
+	<script>
+		function update_text()
+		{
+			function update_ui(all_data)
+			{
+				data = all_data.dateSource[0];
+				console.log(data);
+				var speed = document.getElementById("speed");
+				var altitude = document.getElementById("altitude");
+				var coordinates = document.getElementById("coordinates");
+				speed.textContent = "SPEED : " + data.speed;
+				altitude.textContent = "ALTITUDE : " + data.altitude;
+				coordinates.textContent = "COORDINATES : " + data.coordinates;
+			}
+
+			function manage_error(error)
+			{
+				console.error(error);
+			}
+
+			function parse_json(data_json)
+			{
+				data_json.json()
+					.then(update_ui)
+					.catch(manage_error);
+			}
+			console.log("Updating data values");
+			fetch("data").then(parse_json);
+		}
+
+		const data_refresh_interval = 5;
+		setInterval(update_text, data_refresh_interval*1000);
+	</script>
 </body>
 </html>
