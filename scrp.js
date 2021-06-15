@@ -68,9 +68,6 @@ function get_data()
               coordinates: coordinates
             }]
         }
-        app.get('/', async function(req, res) {
-            res.send(data);
-        });
         
         /*
         console.log(alt);
@@ -88,8 +85,16 @@ get_data();
 setInterval(get_data, data_refresh_interval*1000);
 
 
+app.use(express.static('public'));
 
-app.use(express.json());
+app.get('/data', async function(req, res) {
+    res.send(data);
+});
+
+app.get("/", function(req, res){
+	fs.readFile("index.html", "utf8", function (err, data) {res.send(data);});
+});
+
 app.disable('x-powered-by');
 app.listen(8081, () => {
     console.log('Bonjour sur ton nouveaux cite web')
