@@ -54,13 +54,11 @@ function get_data()
             }]
         }
         
-        /*
+        
         console.log(alt);
         console.log(speed);
-        console.log(coordinates);*/
-        await browser.close(); 
-
-       
+        console.log(coordinates);
+        await browser.close();
     
     })();
 }
