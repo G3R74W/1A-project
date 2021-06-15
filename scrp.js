@@ -19,21 +19,6 @@ var data = {
 
 }
 
-//on va enregistrer nos donnees dans un json pour pouvoir y avoir accès depuis notre html
-const SaveData = (data) => {
-    //on gère les erreurs pour éviter d'enregistrer les donnees sous un mauvais format dans le json
-    const finished = (error) => {
-        if(error) {
-            console.error(error);
-            return;
-        }
-    }
-    const jsonData = JSON.stringify(data, null, 2);
-    console.log("data => ",data);
-    fs.writeFile('data.json', jsonData, finished);
-
-}
-
 function get_data()
 {
     (async () => {
@@ -76,7 +61,6 @@ function get_data()
         await browser.close(); 
 
        
-        SaveData(data);
     
     })();
 }
