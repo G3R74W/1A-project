@@ -34,6 +34,8 @@ const SaveData = (data) => {
 
 }
 
+function get_data()
+{
     (async () => {
         const browser = await puppeteer.launch({headless: true});
         const page = await browser.newPage();
@@ -80,6 +82,11 @@ const SaveData = (data) => {
         SaveData(data);
     
     })();
+}
+
+get_data();
+setInterval(get_data, data_refresh_interval*1000);
+
 
 
 app.use(express.json());
